@@ -4,6 +4,7 @@ $(document).ready(function () {
     /******************************* Functions */
 
     /*** Augmentation des valeurs */
+
     function Up(elementClick, cible) {
         $(elementClick).on("click", function () {
             let value = $(cible).text();
@@ -29,8 +30,8 @@ $(document).ready(function () {
     Up("#bPlayerUpEauRight", "#bPlayerEauRight");
 
 
-
     /*** Augmentation des valeurs */
+
     function Down(elementClick, cible) {
         $(elementClick).on("click", function () {
             let value = $(cible).text();
@@ -59,16 +60,27 @@ $(document).ready(function () {
     Down("#bPlayerDownEauRight", "#bPlayerEauRight");
 
 
-
-
-
     /*** Activer et désacriver des biomes*/
 
     $("#aPlayerPlanteLeft , #aPlayerTerreLeft, #aPlayerEauLeft, #aPlayerPlanteRight , #aPlayerTerreRight, #aPlayerEauRight, #bPlayerPlanteLeft , #bPlayerTerreLeft, #bPlayerEauLeft, #bPlayerPlanteRight , #bPlayerTerreRight, #bPlayerEauRight").on("click", function () {
         $(this).toggleClass("off");
     })
 
-
-
+    /*** Reset les compteurs */
+function Reset(player){
+    $("#"+player+"PlayerReset").on("click", function(){
+        $("#"+player+"PlayerPlanteLeft").text(0);
+        $("#"+player+"PlayerTerreLeft").text(0);
+        $("#"+player+"PlayerEauLeft").text(0);
+        $("#"+player+"PlayerPlanteRight").text(0);
+        $("#"+player+"PlayerTerreRight").text(0);
+        $("#"+player+"PlayerEauRight").text(0);
+        let rotation = 0
+        rotation += 360;
+        $("#"+player+"PlayerReset > img").toggleClass("rotation");
+    });
+}
+Reset("a");
+Reset("b");
 
 })
