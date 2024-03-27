@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jessy Charlet">
+    <meta name="description" content="Compteur pour le jeu Altered TCG">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    
+    <title>Altered counter</title>
+</head>
+
+<body>
+
+    <main>
+
+        <button id="options"><img src="./img/options.png" alt="Options"></button>
+        <div class="road"></div>
+
+        <!-- Zone de jeu du joueur b -->
+
+        <section id="bPlayerArea" class="playerArea">
+
+            <div class="boost">
+                <button id="bPlayerUpLeft"><img src="./img/boost_up.png" alt="Boost +1" /></button>
+                <button id="baPlayerAddLeft"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
+                <button id="bPlayerDownLeft"><img src="./img/boost_down.png" alt="Boost -1" /></button>
+            </div>
+            <div class="area">
+                <button id="bPlayerUpPlanteLeft" class="modify mPlante">▲</button>
+                <button id="bPlayerUpTerreLeft" class="modify mTerre">▲</button>
+                <button id="bPlayerUpEauLeft" class="modify mEau">▲</button>
+                <div id="bPlayerPlanteLeft" class="value plante">0</div>
+                <div id="bPlayerTerreLeft" class="value terre">0</div>
+                <div id="bPlayerEauLeft" class="value eau">0</div>
+                <button id="bPlayerDownPlanteLeft" class="modify mPlante">▼</button>
+                <button id="bPlayerDownTerreLeft" class="modify mTerre">▼</button>
+                <button id="bPlayerDownEauLeft" class="modify mEau">▼</button>
+            </div>
+            <button id="bPlayerReset"><img src="./img/reset.png" alt="Remettre à zéro" /></button>
+            <div class="area">
+                <button id="bPlayerUpPlanteRight" class="modify mPlante">▲</button>
+                <button id="bPlayerUpTerreRight" class="modify mTerre">▲</button>
+                <button id="bPlayerUpEauRight" class="modify mEau">▲</button>
+                <div id="bPlayerPlanteRight" class="value plante">0</div>
+                <div id="bPlayerTerreRight" class="value terre">0</div>
+                <div id="bPlayerEauRight" class="value eau">0</div>
+                <button id="bPlayerDownPlanteRight" class="modify mPlante">▼</button>
+                <button id="bPlayerDownTerreRight" class="modify mTerre">▼</button>
+                <button id="bPlayerDownEauRight" class="modify mEau">▼</button>
+            </div>
+            <div class="boost">
+                <button id="bPlayerUpRight"><img src="./img/boost_up.png" alt="Boost +1" /></button>
+                <button id="bPlayerAddRight"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
+                <button id="bPlayerDownRight"><img src="./img/boost_down.png" alt="Boost -1" /></button>
+            </div>
+
+        </section>
+
+        <!-- Zone de jeu du joueur A -->
+
+        <section id="aPlayerArea" class="playerArea">
+
+            <div class="boost">
+                <button id="aPlayerUpLeft"><img src="./img/boost_up.png" alt="Boost +1" /></button>
+                <button id="aPlayerAddLeft"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
+                <button id="aPlayerDownLeft"><img src="./img/boost_down.png" alt="Boost -1" /></button>
+            </div>
+            <div class="area">
+                <button id="aPlayerUpPlanteLeft" class="modify mPlante">▲</button>
+                <button id="aPlayerUpTerreLeft" class="modify mTerre">▲</button>
+                <button id="aPlayerUpEauLeft" class="modify mEau">▲</button>
+                <div id="aPlayerPlanteLeft" class="value plante">0</div>
+                <div id="aPlayerTerreLeft" class="value terre">0</div>
+                <div id="aPlayerEauLeft" class="value eau">0</div>
+                <button id="aPlayerDownPlanteLeft" class="modify mPlante">▼</button>
+                <button id="aPlayerDownTerreLeft" class="modify mTerre">▼</button>
+                <button id="aPlayerDownEauLeft" class="modify mEau">▼</button>
+            </div>
+            <button id="aPlayerReset"><img src="./img/reset.png" alt="Remettre à zéro" /></button>
+            <div class="area">
+                <button id="aPlayerUpPlanteRight" class="modify mPlante">▲</button>
+                <button id="aPlayerUpTerreRight" class="modify mTerre">▲</button>
+                <button id="aPlayerUpEauRight" class="modify mEau">▲</button>
+                <div id="aPlayerPlanteRight" class="value plante">0</div>
+                <div id="aPlayerTerreRight" class="value terre">0</div>
+                <div id="aPlayerEauRight" class="value eau">0</div>
+                <button id="aPlayerDownPlanteRight" class="modify mPlante">▼</button>
+                <button id="aPlayerDownTerreRight" class="modify mTerre">▼</button>
+                <button id="aPlayerDownEauRight" class="modify mEau">▼</button>
+            </div>
+            <div class="boost">
+                <button id="aPlayerUpRight"><img src="./img/boost_up.png" alt="Boost +1" /></button>
+                <button id="aPlayerAddRight"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
+                <button id="aPlayerDownRight"><img src="./img/boost_down.png" alt="Boost -1" /></button>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
