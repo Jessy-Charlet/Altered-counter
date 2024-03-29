@@ -22,6 +22,12 @@
     <main>
 
         <button id="options"><img src="./img/options.png" alt="Options"></button>
+        <div id="aPlayerArrowRight" class="arrow"><img src="./img/arrow_right.png"/></div>
+        <div id="bPlayerArrowRight" class="arrow"><img src="./img/arrow_right.png"/></div>
+        <div id="aPlayerArrowLeft" class="arrow"><img src="./img/arrow_left.png"/></div>
+        <div id="bPlayerArrowLeft" class="arrow"><img src="./img/arrow_left.png"/></div>
+        <div id="hero" class="token"><img src="./img/hero.png" alt="Jeton héro"/></div>
+        <div id="compagnon" class="token"><img src="./img/compagnon.png" alt="Jeton compagnon"/></div>
         <div class="road"></div>
 
         <!-- Zone de jeu du joueur b -->
@@ -29,22 +35,10 @@
         <section id="bPlayerArea" class="playerArea">
 
             <div class="boost">
-                <button id="bPlayerUpLeft"><img src="./img/boost_up.png" alt="Boost +1" /></button>
-                <button id="baPlayerAddLeft"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
-                <button id="bPlayerDownLeft"><img src="./img/boost_down.png" alt="Boost -1" /></button>
+                <button id="bPlayerUpRight"><img src="./img/boost_up.png" alt="Boost +1" /></button>
+                <button id="bPlayerAddRight"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
+                <button id="bPlayerDownRight"><img src="./img/boost_down.png" alt="Boost -1" /></button>
             </div>
-            <div class="area">
-                <button id="bPlayerUpPlanteLeft" class="modify mPlante">▲</button>
-                <button id="bPlayerUpTerreLeft" class="modify mTerre">▲</button>
-                <button id="bPlayerUpEauLeft" class="modify mEau">▲</button>
-                <div id="bPlayerPlanteLeft" class="value plante">0</div>
-                <div id="bPlayerTerreLeft" class="value terre">0</div>
-                <div id="bPlayerEauLeft" class="value eau">0</div>
-                <button id="bPlayerDownPlanteLeft" class="modify mPlante">▼</button>
-                <button id="bPlayerDownTerreLeft" class="modify mTerre">▼</button>
-                <button id="bPlayerDownEauLeft" class="modify mEau">▼</button>
-            </div>
-            <button id="bPlayerReset"><img src="./img/reset.png" alt="Remettre à zéro" /></button>
             <div class="area">
                 <button id="bPlayerUpPlanteRight" class="modify mPlante">▲</button>
                 <button id="bPlayerUpTerreRight" class="modify mTerre">▲</button>
@@ -56,10 +50,22 @@
                 <button id="bPlayerDownTerreRight" class="modify mTerre">▼</button>
                 <button id="bPlayerDownEauRight" class="modify mEau">▼</button>
             </div>
+            <button id="bPlayerReset"><img src="./img/reset.png" alt="Remettre à zéro" /></button>
+            <div class="area">
+                <button id="bPlayerUpPlanteLeft" class="modify mPlante">▲</button>
+                <button id="bPlayerUpTerreLeft" class="modify mTerre">▲</button>
+                <button id="bPlayerUpEauLeft" class="modify mEau">▲</button>
+                <div id="bPlayerPlanteLeft" class="value plante">0</div>
+                <div id="bPlayerTerreLeft" class="value terre">0</div>
+                <div id="bPlayerEauLeft" class="value eau">0</div>
+                <button id="bPlayerDownPlanteLeft" class="modify mPlante">▼</button>
+                <button id="bPlayerDownTerreLeft" class="modify mTerre">▼</button>
+                <button id="bPlayerDownEauLeft" class="modify mEau">▼</button>
+            </div>
             <div class="boost">
-                <button id="bPlayerUpRight"><img src="./img/boost_up.png" alt="Boost +1" /></button>
-                <button id="bPlayerAddRight"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
-                <button id="bPlayerDownRight"><img src="./img/boost_down.png" alt="Boost -1" /></button>
+                <button id="bPlayerUpLeft"><img src="./img/boost_up.png" alt="Boost +1" /></button>
+                <button id="baPlayerAddLeft"><img src="./img/add_character.png" alt="Ajouter un personnage" /></button>
+                <button id="bPlayerDownLeft"><img src="./img/boost_down.png" alt="Boost -1" /></button>
             </div>
 
         </section>
@@ -102,6 +108,37 @@
                 <button id="aPlayerDownRight"><img src="./img/boost_down.png" alt="Boost -1" /></button>
             </div>
 
+        </section>
+
+        <section id="optionsWindow">
+            <button id="close">❌</button>
+            <h1>Options</h1>
+            <section id="bPlayerSettings">
+                <button id="bPlayerBlack" class="theme"></button>
+                <button id="bPlayerWhite" class="theme"></button>
+                <button id="bPlayerAxiom" class="theme"></button>
+                <button id="bPlayerBravos" class="theme"></button>
+                <button id="bPlayerLyra" class="theme"></button>
+                <button id="bPlayerMuna" class="theme"></button>
+                <button id="bPlayerOrdis" class="theme"></button>
+                <button id="bPlayerYzmir" class="theme"></button>
+                <h2>↓ Joueur ↓</h2>
+            </section>
+            <section id="settings">
+                <button id="solo"></button>
+                <button id="duo"></button>
+            </section>
+            <section id="aPlayerSettings">
+                <button id="aPlayerBlack" class="theme"></button>
+                <button id="aPlayerWhite" class="theme"></button>
+                <button id="aPlayerAxiom" class="theme"></button>
+                <button id="aPlayerBravos" class="theme"></button>
+                <button id="aPlayerLyra" class="theme"></button>
+                <button id="aPlayerMuna" class="theme"></button>
+                <button id="aPlayerOrdis" class="theme"></button>
+                <button id="aPlayerYzmir" class="theme"></button>
+                <h2>↓ Joueur ↓</h2>
+            </section>
         </section>
 
     </main>

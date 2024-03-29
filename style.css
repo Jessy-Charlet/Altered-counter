@@ -13,7 +13,7 @@ main {
 }
 
 
-/*** Options */
+/*** Zone centrale */
 
 #options {
     z-index: 10;
@@ -26,10 +26,15 @@ main {
 
     img {
         width: 10vh;
+        transition: all 200ms;
     }
 }
 
-.road{
+#options:hover img {
+    width: 12vh
+}
+
+.road {
     z-index: 5;
     position: absolute;
     top: 50%;
@@ -37,9 +42,111 @@ main {
     translate: -50% -50%;
     width: 100vw;
     height: 2vh;
-    background: linear-gradient(90deg, rgb(240,210,130,0), rgb(240,210,130,1) 15%, rgb(180,140,70,1) 45%,  rgb(180,140,70,1) 55%,rgb(240,210,130,1) 85%, rgb(240,210,130,0))
+    background: linear-gradient(90deg, rgb(240, 210, 130, 0), rgb(240, 210, 130, 1) 15%, rgb(180, 140, 70, 1) 45%, rgb(180, 140, 70, 1) 55%, rgb(240, 210, 130, 1) 85%, rgb(240, 210, 130, 0))
 }
 
+.token {
+    z-index: 8;
+    position: absolute;
+
+    img {
+        height: 12vh;
+    }
+}
+
+#hero {
+    top: 50%;
+    left: 50%;
+
+    img {
+        translate: -25vw -50%;
+    }
+}
+
+#compagnon {
+    top: 50%;
+    right: 50%;
+
+    img {
+        translate: 25vw -50%;
+    }
+}
+
+.arrow {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 10%;
+
+    img {
+        height: 5vh;
+
+    }
+}
+
+#aPlayerArrowRight img {
+    translate: 15vw 4vh;
+    animation: infinite alternate 2s slideARight;
+}
+
+#bPlayerArrowRight img {
+    translate: 15vw -4vh;
+    animation: infinite alternate 2s slideBRight;
+}
+
+#aPlayerArrowLeft img {
+    translate: -15vw 4vh;
+    animation: infinite alternate 2s slideALeft;
+}
+
+#bPlayerArrowLeft img {
+    translate: -15vw -4vh;
+    animation: infinite alternate 2s slideBLeft;
+}
+
+@keyframes slideARight {
+    from {
+        translate: 15vw 4vh;
+    }
+
+    to {
+        translate: 13vw 4vh;
+    }
+}
+
+@keyframes slideBRight {
+    from {
+        translate: 15vw -4vh;
+    }
+
+    to {
+        translate: 13vw -4vh;
+    }
+}
+
+@keyframes slideALeft {
+    from {
+        translate: -15vw 4vh;
+    }
+
+    to {
+        translate: -13vw 4vh;
+    }
+}
+
+@keyframes slideBLeft {
+    from {
+        translate: -15vw -4vh;
+    }
+
+    to {
+        translate: -13vw -4vh;
+    }
+}
 
 /*** Players areas*/
 
@@ -86,16 +193,19 @@ main {
 
 /*** Zone reset */
 
-#aPlayerReset, #bPlayerReset {
+#aPlayerReset,
+#bPlayerReset {
     padding: 1em;
     border: none;
     background-color: transparent;
+
     img {
         width: 70%;
         transform: rotate(0);
         transition: all 500ms;
     }
-    .rotation{
+
+    .rotation {
         transform: rotate(360deg);
     }
 }
@@ -122,6 +232,11 @@ main {
     border-radius: 10%;
 }
 
+.higter {
+    -webkit-text-stroke: 5px black;
+    text-shadow: 0 0.1em 0 black;
+}
+
 .modify {
     font-size: 8vh;
     border: none;
@@ -130,6 +245,8 @@ main {
 
 .plante {
     background-color: #b8c248;
+    box-shadow: 0 0.1em 0 #5c6124;
+    border: 5px solid rgb(0, 0, 0, 0.5);
 }
 
 .mPlante {
@@ -139,6 +256,8 @@ main {
 
 .terre {
     background-color: #db8d4b;
+    box-shadow: 0 0.1em 0 #6d4625;
+    border: 5px solid rgb(0, 0, 0, 0.5);
 }
 
 .mTerre {
@@ -147,6 +266,8 @@ main {
 
 .eau {
     background-color: #6898c9;
+    box-shadow: 0 0.1em 0 #344c64;
+    border: 5px solid rgb(0, 0, 0, 0.5);
 }
 
 .mEau {
@@ -158,4 +279,97 @@ main {
 }
 
 
-/***  */
+/*** fenêtres des options */
+
+#optionsWindow {
+    box-sizing: border-box;
+    width: 90vw;
+    height: 90vh;
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    z-index: 20;
+    background-color: transparent;
+    border-radius: 2em;
+    border: 10px solid white;
+    backdrop-filter: blur(50px);
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    padding: 2vh 2vw 2vh 5vw;
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: rotate(90deg);
+        translate: -7.5vw -50%;
+        color: white;
+        font-size: 5vw;
+        text-transform: uppercase;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+#close {
+    box-sizing: border-box;
+    padding: 0.3em;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 3em;
+    border-radius: 100%;
+    background-color: white;
+    border: none;
+    translate: 50% -50%;
+    transition: all 200ms;
+}
+
+#close:hover {
+    padding: 0.5em;
+}
+
+.theme {
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 5px solid white;
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    box-shadow: inset 0 0 2vh rgb(0, 0, 0, 0.5);
+}
+#aPlayerBlack, #bPlayerBlack{
+    background-color: black;
+}
+#aPlayerWhite, #bPlayerWhite{
+    background-color: white;
+}
+
+.backgroundBlack{
+    background-color: black;
+}
+.backgroundWhite{
+    background-color: white;
+    padding:200px;
+}
+
+
+#aPlayerSettings,
+#bPlayerSettings {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: space-around;
+
+    h2 {
+        grid-column: 1/9;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        color: white;
+        font-size: 2em;
+    }
+}
+
+#bPlayerSettings {
+    transform: rotate(180deg);
+}
