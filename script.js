@@ -231,15 +231,29 @@ $(document).ready(function () {
     })
 
     /*** Changement de couleur des themes */
-    function Background(player, couleur){
-        $("#"+player+couleur).on("click", function(){
-            $("#"+player+"Area").removeAttr("class");
-            $("#"+player+"Area").addClass("playerArea", "backgroundWhite");
-            console.log(couleur)
+    function Background(player, color){
+        $("#"+player+color).on("click", function(){
+            $("#"+player+"Area").removeClass();
+            $("#"+player+"Area").addClass("playerArea background"+color);
+
         })
     }
 Background("aPlayer", "Black");
 Background("aPlayer", "White");
+Background("aPlayer", "Axiom");
+Background("aPlayer", "Bravos");
+Background("aPlayer", "Lyra");
+Background("aPlayer", "Muna");
+Background("aPlayer", "Ordis");
+Background("aPlayer", "Yzmir");
+Background("bPlayer", "Black");
+Background("bPlayer", "White");
+Background("bPlayer", "Axiom");
+Background("bPlayer", "Bravos");
+Background("bPlayer", "Lyra");
+Background("bPlayer", "Muna");
+Background("bPlayer", "Ordis");
+Background("bPlayer", "Yzmir");
 
 
 

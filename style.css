@@ -13,7 +13,7 @@ main {
 }
 
 
-/*** Zone centrale */
+/*** Zone centrale ---------------------------------------------------------------*/
 
 #options {
     z-index: 10;
@@ -42,7 +42,7 @@ main {
     translate: -50% -50%;
     width: 100vw;
     height: 2vh;
-    background: linear-gradient(90deg, rgb(240, 210, 130, 0), rgb(240, 210, 130, 1) 15%, rgb(180, 140, 70, 1) 45%, rgb(180, 140, 70, 1) 55%, rgb(240, 210, 130, 1) 85%, rgb(240, 210, 130, 0))
+    background: linear-gradient(90deg, rgb(180, 140, 70, 1), rgb(240, 210, 130, 1) 15%, rgb(180, 140, 70, 1) 45%, rgb(180, 140, 70, 1) 55%, rgb(240, 210, 130, 1) 85%, rgb(180, 140, 70, 1))
 }
 
 .token {
@@ -148,7 +148,7 @@ main {
     }
 }
 
-/*** Players areas*/
+/*** Players areas -------------------------------------------------------------------*/
 
 .playerArea {
     box-sizing: border-box;
@@ -160,12 +160,7 @@ main {
     padding-top: 3em;
 }
 
-#aPlayerArea {
-    background-color: black;
-}
-
 #bPlayerArea {
-    background-color: white;
     transform: rotate(180deg);
 }
 
@@ -338,21 +333,46 @@ main {
     aspect-ratio: 1 / 1;
     box-shadow: inset 0 0 2vh rgb(0, 0, 0, 0.5);
 }
-#aPlayerBlack, #bPlayerBlack{
-    background-color: black;
+#aPlayerBlack, #bPlayerBlack, .backgroundBlack{
+    background-color: black ;
+    background: linear-gradient(90deg,#000000, rgb(49, 49, 49), #000000);
+    box-shadow: inset 0 2vh 0 black;
 }
-#aPlayerWhite, #bPlayerWhite{
-    background-color: white;
+#aPlayerWhite, #bPlayerWhite, .backgroundWhite{
+    background: linear-gradient(90deg,#b8b8b8, white, #b8b8b8);
+    background-color: white ;
+    box-shadow: inset 0 2vh 0 #b8b8b8;
 }
-
-.backgroundBlack{
-    background-color: black;
+#aPlayerAxiom, #bPlayerAxiom, .backgroundAxiom{
+    background: url('./img/AXIOM-faction-banner.png') no-repeat top center, linear-gradient(90deg,#593328, #895545, #593328);
+    background-size: auto 22vh;
+    box-shadow: inset 0 2vh 0 #593328;
 }
-.backgroundWhite{
-    background-color: white;
-    padding:200px;
+#aPlayerBravos, #bPlayerBravos, .backgroundBravos{
+    background: url('./img/BRAVOS-faction-banner.png') no-repeat top center, linear-gradient(90deg,#820618, #bd3736, #820618);
+    background-size: auto 22vh;
+    box-shadow: inset 0 2vh 0 #820618;
 }
-
+#aPlayerLyra, #bPlayerLyra, .backgroundLyra{
+    background: url('./img/LYRA-faction-banner.png') no-repeat top center, linear-gradient(90deg,#8b2748, #cf4978, #8b2748);
+    background-size: auto 22vh;
+    box-shadow: inset 0 2vh 0 #8b2748;
+}
+#aPlayerMuna, #bPlayerMuna, .backgroundMuna{
+    background: url('./img/MUNA-faction-banner.png') no-repeat top center, linear-gradient(90deg,#2f552b, #4e7f3c, #2f552b);
+    background-size: auto 22vh;
+    box-shadow: inset 0 2vh 0 #2f552b;
+}
+#aPlayerOrdis, #bPlayerOrdis, .backgroundOrdis{
+    background: url('./img/ORDIS-faction-banner.png') no-repeat top center, linear-gradient(90deg,#244154, #0075a0, #244154);
+    background-size: auto 22vh;;
+    box-shadow: inset 0 2vh 0 #244154;
+}
+#aPlayerYzmir, #bPlayerYzmir, .backgroundYzmir{
+    background: url('./img/YZMIR-faction-banner.png') no-repeat top center, linear-gradient(90deg,#523557, #9960a4, #523557);
+    background-size: auto 22vh;
+    box-shadow: inset 0 2vh 0 #523557;
+}
 
 #aPlayerSettings,
 #bPlayerSettings {
