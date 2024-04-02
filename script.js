@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#bPlayerArrowRight").hide();
     $("#bPlayerArrowLeft").hide();
     $("#optionsWindow").hide();
+    $("#character").hide();
 
     /******************************* Gestion individuelle des values */
 
@@ -121,7 +122,7 @@ $(document).ready(function () {
             $("#" + player + "Plante" + zone).text(valuePlante);
             $("#" + player + "Terre" + zone).text(valueTerre);
             $("#" + player + "Eau" + zone).text(valueEau);
-            HigterAll()
+            HigterAll();
             ArrowAll();
         })
     }
@@ -143,7 +144,7 @@ $(document).ready(function () {
 
     /*** Reset les compteurs */
     function Reset(player) {
-        $("#" + player + "Reset").on("click", function () {
+        $("#" + player + "Reset img").on("click", function () {
             $("#" + player + "PlanteLeft").text(0);
             $("#" + player + "TerreLeft").text(0);
             $("#" + player + "EauLeft").text(0);
@@ -153,7 +154,7 @@ $(document).ready(function () {
             let rotation = 0
             rotation += 360;
             $("#" + player + "Reset > img").toggleClass("rotation");
-            HigterAll()
+            HigterAll();
             ArrowAll();
         });
     }
@@ -205,10 +206,67 @@ $(document).ready(function () {
 
     /******************************* Ajouter un personnage */
 
-    /*** */
+    /*** Ouverture et mechanique des quartes menus*/
+    function addCharacter(zone, player) {
+        $("#" + player + "Add" + zone).on("click", function () {
+            $("#character").html("<div class='frame'>" +
+                "<div class='area'>" +
+                "<button id='characterUpPlante' class='modify mPlante'>▲</button>" +
+                "<button id='characterUpTerre' class='modify mTerre'>▲</button>" +
+                "<button id='characterUpEau' class='modify mEau'>▲</button>" +
+                "<div id='characterPlante' class='value plante'>0</div>" +
+                "<div id='characterTerre' class='value terre'>0</div>" +
+                "<div id='characterEau' class='value eau'>0</div>" +
+                "<button id='characterDownPlante' class='modify mPlante')'>▼</button>" +
+                "<button id='characterDownTerre' class='modify mTerre'>▼</button>" +
+                "<button id='characterDownEau' class='modify mEau'>▼</button>" +
+                "</div>" +
+                "<div class='framebutton'>" +
+                "<button id='characterClose' class='close'>✖</button>" +
+                "<button id='" + player + "CharacterCheck" + zone + "' class='check'>✔</button>" +
+                "</div>" +
+                "</div>");
+            $("#character").fadeIn("fast");
+            Up("#characterUpPlante", "#characterPlante");
+            Up("#characterUpTerre", "#characterTerre");
+            Up("#characterUpEau", "#characterEau");
+            Down("#characterDownPlante", "#characterPlante");
+            Down("#characterDownTerre", "#characterTerre");
+            Down("#characterDownEau", "#characterEau");
+            /*** Fermeture des quartes menus*/
+            Check(zone, player);
+            $("#characterClose").on("click", function () {
+                $("#character").fadeOut("fast");
+            })
+        })
+    }
 
+    addCharacter("Right", "aPlayer");
+    addCharacter("Left", "aPlayer");
+    addCharacter("Right", "bPlayer");
+    addCharacter("Left", "bPlayer");
 
-
+    /*** Validation des stats de biomes */
+    function Check(player, zone) {
+        $("#" + player + "CharacterCheck" + zone).on("click", function () {
+            console.log(player);
+            let valuePlante = $("#" + player + "Plante" + zone).text();
+            let valueTerre = $("#" + player + "Terre" + zone).text();
+            let valueEau = $("#" + player + "Eau" + zone).text();
+            let characterPlante = $("#" + player + "Plante" + zone).text();
+            let characterTerre = $("#" + player + "Terre" + zone).text();
+            let characterEau = $("#" + player + "Eau" + zone).text();
+            valuePlante = valuePlante + characterPlante;
+            valueTerre = valueTerre + characterTerre;
+            valueEau = valueEau + characterEau;
+            $("#" + player + "Plante" + zone).text(valuePlante);
+            $("#" + player + "Terre" + zone).text(valueTerre);
+            $("#" + player + "Eau" + zone).text(valueEau);
+            HigterAll();
+            ArrowAll();
+            $("#character").fadeOut("fast");
+        })
+    }
 
 
 
@@ -222,38 +280,38 @@ $(document).ready(function () {
 
     /*** Ouverture du menu */
     $("#options").on("click", function () {
-        $("#optionsWindow").fadeIn();
+        $("#optionsWindow").fadeIn("fast");
     })
 
     /*** Fermeture du menu */
     $("#close").on("click", function () {
-        $("#optionsWindow").fadeOut();
+        $("#optionsWindow").fadeOut("fast");
     })
 
     /*** Changement de couleur des themes */
-    function Background(player, color){
-        $("#"+player+color).on("click", function(){
-            $("#"+player+"Area").removeClass();
-            $("#"+player+"Area").addClass("playerArea background"+color);
+    function Background(player, color) {
+        $("#" + player + color).on("click", function () {
+            $("#" + player + "Area").removeClass();
+            $("#" + player + "Area").addClass("playerArea background" + color);
 
         })
     }
-Background("aPlayer", "Black");
-Background("aPlayer", "White");
-Background("aPlayer", "Axiom");
-Background("aPlayer", "Bravos");
-Background("aPlayer", "Lyra");
-Background("aPlayer", "Muna");
-Background("aPlayer", "Ordis");
-Background("aPlayer", "Yzmir");
-Background("bPlayer", "Black");
-Background("bPlayer", "White");
-Background("bPlayer", "Axiom");
-Background("bPlayer", "Bravos");
-Background("bPlayer", "Lyra");
-Background("bPlayer", "Muna");
-Background("bPlayer", "Ordis");
-Background("bPlayer", "Yzmir");
+    Background("aPlayer", "Black");
+    Background("aPlayer", "White");
+    Background("aPlayer", "Axiom");
+    Background("aPlayer", "Bravos");
+    Background("aPlayer", "Lyra");
+    Background("aPlayer", "Muna");
+    Background("aPlayer", "Ordis");
+    Background("aPlayer", "Yzmir");
+    Background("bPlayer", "Black");
+    Background("bPlayer", "White");
+    Background("bPlayer", "Axiom");
+    Background("bPlayer", "Bravos");
+    Background("bPlayer", "Lyra");
+    Background("bPlayer", "Muna");
+    Background("bPlayer", "Ordis");
+    Background("bPlayer", "Yzmir");
 
 
 
